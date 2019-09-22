@@ -24,29 +24,61 @@ public class blockBehavior : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().gravityScale = 0;
         yCom = this.GetComponent<Transform>().position.y;
-        if (spacePressedNum == 4)
+        if (spacePressedNum == 2)
+        {
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
+        }
+        else if (spacePressedNum == 4)
         {
             speed = 0.08f;
+        }
+        else if (spacePressedNum == 6)
+        {
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
         }
         else if (spacePressedNum == 8)
         {
             speed = 0.12f;
         }
+        else if (spacePressedNum == 10)
+        {
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
+        }
         else if (spacePressedNum == 12)
         {
             speed = 0.18f;
+        }
+        else if (spacePressedNum == 14)
+        {
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
         }
         else if (spacePressedNum == 16)
         {
             speed = 0.22f;
         }
+        else if (spacePressedNum == 18)
+        {
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
+        }
         else if (spacePressedNum == 20)
         {
             speed = 0.26f;
         }
+        else if (spacePressedNum == 23)
+        {
+            transform.localScale -= new Vector3(0.1f, 0f, 0);
+        }
         else if (spacePressedNum == 25)
         {
             speed = 0.3f;
+        }
+        else if (spacePressedNum == 28)
+        {
+            transform.localScale -= new Vector3(0.1f, 0f, 0);
+        }
+        else if (spacePressedNum == 32)
+        {
+            speed = 0.35f;
         }
     }
 
