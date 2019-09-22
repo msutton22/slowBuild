@@ -1,25 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class button : MonoBehaviour
+public class end : MonoBehaviour
 {
-  
+    private int score;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
-        //score = GameObject.Find("house").GetComponent<blockBehavior>().score;
+        scoreText.text = "Score: " + (PlayerPrefs.GetFloat ("Score")).ToString(); //changing text of the score text
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-    
-    public void PlayGame() {
-        SceneManager.LoadScene (0); //if the button is pressed, go to the game
     }
 }

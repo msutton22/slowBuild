@@ -8,6 +8,7 @@
           <e p="blockBehavior.cs" t="Include" />
           <e p="button.cs" t="Include" />
           <e p="cameraBehavior.cs" t="Include" />
+          <e p="end.cs" t="Include" />
           <e p="roofScript.cs" t="Include" />
         </e>
       </e>

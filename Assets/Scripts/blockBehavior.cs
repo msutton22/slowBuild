@@ -12,7 +12,6 @@ public class blockBehavior : MonoBehaviour
     public GameObject square;
     public GameObject camera;
     public GameObject scoreText;
-  //  public GameObject scoreText;
     
     private bool spacePressed = false;
 
@@ -24,6 +23,7 @@ public class blockBehavior : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().gravityScale = 0;
         yCom = this.GetComponent<Transform>().position.y;
+        //DontDestroyOnLoad (gameObject);
     }
 
     // Update is called once per frame
@@ -54,6 +54,7 @@ public class blockBehavior : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision) //when you collide with enemy
     {
+        PlayerPrefs.SetFloat ("Score", score);
         if (collision.gameObject.tag.Equals("wall"))
         {
             speed = -speed;
