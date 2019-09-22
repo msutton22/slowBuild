@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class blockBehavior : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class blockBehavior : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().gravityScale = 0;
         yCom = this.GetComponent<Transform>().position.y;
-        Debug.Log(yCom);
     }
 
     // Update is called once per frame
@@ -61,6 +61,10 @@ public class blockBehavior : MonoBehaviour
         if (collision.gameObject.tag.Equals("Block"))
         {
             score += 1;
+        }
+        if (collision.gameObject.tag.Equals("floor"))
+        {
+            SceneManager.LoadScene (1);
         }
     }
 }
