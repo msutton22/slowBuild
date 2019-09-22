@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="blockBehavior.cs" t="Include" />
+          <e p="cameraBehavior.cs" t="Include" />
           <e p="roofScript.cs" t="Include" />
         </e>
       </e>

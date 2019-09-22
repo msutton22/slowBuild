@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2649504131791912200}
   - component: {fileID: 2649504131791912247}
   - component: {fileID: 2649504131791912246}
-  - component: {fileID: 5601588811694867295}
-  - component: {fileID: 2649504131791912245}
+  - component: {fileID: 8299874577052073137}
+  - component: {fileID: 5346543720260199440}
+  - component: {fileID: 6657387465182674660}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5601588811694867295
+--- !u!114 &8299874577052073137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +113,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2649504131791912244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb952d4d2f054ea59fefdf3a2f61ee9, type: 3}
+  m_Script: {fileID: 11500000, guid: 033a2accd998d4813bf267ee99ec8441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
---- !u!61 &2649504131791912245
-BoxCollider2D:
+  square: {fileID: 1260373759826166199, guid: 53c0b4ea131204572ab4b53e904eab17, type: 3}
+  rect: {fileID: 4202212788138061840, guid: 7a1384fffa35f49579baa56064fab600, type: 3}
+  triangle: {fileID: 2649504131791912244}
+  halfMoon: {fileID: 8340561693937870908, guid: 1fd2d3026bb21487db0ddbfaf99f3925,
+    type: 3}
+--- !u!68 &5346543720260199440
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,16 +135,27 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2053473, y: -5.514243}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.84, y: 11.99}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.158115, y: 0.9615135}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -6.78998, y: -5.715297}
+  - {x: -0.02380828, y: 6.135542}
+  - {x: 6.92, y: -5.715298}
+--- !u!68 &6657387465182674660
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649504131791912244}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -5.87}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -6.9199996, y: 0}
+  - {x: 6.9199996, y: 0}
