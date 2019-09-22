@@ -9,6 +9,7 @@ public class blockBehavior : MonoBehaviour
 {
     public float speed;
     public int score;
+    public int spacePressedNum;
     public GameObject square;
     public GameObject camera;
     public GameObject scoreText;
@@ -23,7 +24,30 @@ public class blockBehavior : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().gravityScale = 0;
         yCom = this.GetComponent<Transform>().position.y;
-        //DontDestroyOnLoad (gameObject);
+        if (spacePressedNum == 4)
+        {
+            speed = 0.08f;
+        }
+        else if (spacePressedNum == 8)
+        {
+            speed = 0.12f;
+        }
+        else if (spacePressedNum == 12)
+        {
+            speed = 0.18f;
+        }
+        else if (spacePressedNum == 16)
+        {
+            speed = 0.22f;
+        }
+        else if (spacePressedNum == 20)
+        {
+            speed = 0.26f;
+        }
+        else if (spacePressedNum == 25)
+        {
+            speed = 0.3f;
+        }
     }
 
     // Update is called once per frame
@@ -49,7 +73,9 @@ public class blockBehavior : MonoBehaviour
         {
             this.GetComponent<Rigidbody2D>().gravityScale = 1;
             spacePressed = true;
+            spacePressedNum += 1;
         }
+
     }
     
     void OnCollisionEnter2D(Collision2D collision) //when you collide with enemy
