@@ -10,7 +10,7 @@ public class end : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: " + (PlayerPrefs.GetFloat ("Score")).ToString(); //changing text of the score text
+        scoreText.text = "Number of Stories: " + (PlayerPrefs.GetFloat ("Score")).ToString(); //changing text of the score text
     }
 
     // Update is called once per frame

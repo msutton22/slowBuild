@@ -26,7 +26,7 @@ public class blockBehavior : MonoBehaviour
         yCom = this.GetComponent<Transform>().position.y;
         if (spacePressedNum == 2)
         {
-            transform.localScale -= new Vector3(0.08f, 0f, 0);
+            transform.localScale -= new Vector3(0.04f, 0f, 0);
         }
         else if (spacePressedNum == 4)
         {
@@ -34,7 +34,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 6)
         {
-            transform.localScale -= new Vector3(0.08f, 0f, 0);
+            transform.localScale -= new Vector3(0.04f, 0f, 0);
         }
         else if (spacePressedNum == 8)
         {
@@ -42,7 +42,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 10)
         {
-            transform.localScale -= new Vector3(0.08f, 0f, 0);
+            transform.localScale -= new Vector3(0.04f, 0f, 0);
         }
         else if (spacePressedNum == 12)
         {
@@ -50,7 +50,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 14)
         {
-            transform.localScale -= new Vector3(0.08f, 0f, 0);
+            transform.localScale -= new Vector3(0.04f, 0f, 0);
         }
         else if (spacePressedNum == 16)
         {
@@ -58,7 +58,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 18)
         {
-            transform.localScale -= new Vector3(0.08f, 0f, 0);
+            transform.localScale -= new Vector3(0.04f, 0f, 0);
         }
         else if (spacePressedNum == 20)
         {
@@ -66,7 +66,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 23)
         {
-            transform.localScale -= new Vector3(0.1f, 0f, 0);
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
         }
         else if (spacePressedNum == 25)
         {
@@ -74,7 +74,7 @@ public class blockBehavior : MonoBehaviour
         }
         else if (spacePressedNum == 28)
         {
-            transform.localScale -= new Vector3(0.1f, 0f, 0);
+            transform.localScale -= new Vector3(0.08f, 0f, 0);
         }
         else if (spacePressedNum == 32)
         {
@@ -85,7 +85,7 @@ public class blockBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.gameObject.GetComponent<Text>().text = ("Score: " + score);
+        scoreText.gameObject.GetComponent<Text>().text = ("Number of Stories: " + score);
         if (spacePressed == false)
         {
             this.GetComponent<Transform> ().Translate (new Vector3 (speed, 0));

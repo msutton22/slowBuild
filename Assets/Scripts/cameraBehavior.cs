@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class cameraBehavior : MonoBehaviour
 {
@@ -25,11 +27,11 @@ public class cameraBehavior : MonoBehaviour
         if (spacePressed != false)
         {
             timeToRoof -= Time.deltaTime;
+            transform.position += Vector3.up * 0.65f * Time.deltaTime;
             if (timeToRoof <= 0)
             {
                 floor1.transform.position += Vector3.up * speed * Time.deltaTime;
                 floor2.transform.position += Vector3.up * speed * Time.deltaTime;
-                transform.position += Vector3.up * speed * Time.deltaTime;
                 timeToRoof = 1.5f;
                 spacePressed = false;
             }
