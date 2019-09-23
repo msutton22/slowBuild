@@ -8,6 +8,8 @@ TagManager:
   - top
   - Block
   - floor
+  - bird
+  - wall2
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - bird
+  - wall
   - 
   - 
   - 

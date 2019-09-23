@@ -13,6 +13,7 @@ public class blockBehavior : MonoBehaviour
     public GameObject square;
     public GameObject camera;
     public GameObject scoreText;
+    public AudioSource sound1;
     
     private bool spacePressed = false;
 
@@ -120,10 +121,15 @@ public class blockBehavior : MonoBehaviour
         if (collision.gameObject.tag.Equals("Block"))
         {
             score += 1;
+            sound1.Play();
         }
         if (collision.gameObject.tag.Equals("floor"))
         {
             SceneManager.LoadScene (1);
+        }
+        if (collision.gameObject.tag.Equals("bird"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

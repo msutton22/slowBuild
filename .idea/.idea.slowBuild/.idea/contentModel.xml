@@ -5,6 +5,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="birdBehavior.cs" t="Include" />
           <e p="blockBehavior.cs" t="Include" />
           <e p="button.cs" t="Include" />
           <e p="cameraBehavior.cs" t="Include" />
