@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.SceneManagement;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class blockBehavior : MonoBehaviour
 {
@@ -14,10 +17,14 @@ public class blockBehavior : MonoBehaviour
     public GameObject camera;
     public GameObject scoreText;
     public AudioSource sound1;
+
+    private bool cameraDown = false;
     
     private bool spacePressed = false;
 
     private float timeToRoof = 2f;
+    private float fasterTime = 1f;
+    private float pauseTime = 1f;
 
     private float yCom;
     // Start is called before the first frame update
@@ -97,7 +104,6 @@ public class blockBehavior : MonoBehaviour
             if (timeToRoof <= 0)
             {
                 Instantiate(square, new Vector3(0, yCom + 1f, 0), Quaternion.identity);
-                camera.transform.position += Vector3.up * speed * Time.deltaTime;
                 timeToRoof = 100000f;
             }
         }
@@ -109,6 +115,19 @@ public class blockBehavior : MonoBehaviour
             spacePressedNum += 1;
         }
 
+        if (cameraDown == true)
+        {
+            camera.transform.localPosition -= new Vector3(0, 0.04f, 0);
+            if (camera.transform.localPosition.y <= 0)
+            {
+                camera.transform.localPosition = new Vector3(0, 0, -10);
+                pauseTime -= Time.deltaTime;
+                if (pauseTime <= 0)
+                {
+                    SceneManager.LoadScene (1);
+                }
+            }
+        }
     }
     
     void OnCollisionEnter2D(Collision2D collision) //when you collide with enemy
@@ -125,7 +144,10 @@ public class blockBehavior : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("floor"))
         {
-            SceneManager.LoadScene (1);
+           // SceneManager.LoadScene (1);
+            Destroy(collision.gameObject);
+            cameraDown = true;
+            //camera.transform.position = new Vector3(0, 0, -10);
         }
         if (collision.gameObject.tag.Equals("bird"))
         {
